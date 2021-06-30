@@ -7,11 +7,11 @@ spec:
   - name: httpweb
     image: http
     ports:
-      containerPort: 80
+    - containerPort: 8080
   - name: mynginx
     image: nginx
     ports:
-      containerPort: 8080
+    - containerPort: 8081
       
     
    
