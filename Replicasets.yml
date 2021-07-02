@@ -1,1 +1,22 @@
-
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: mypython-controller
+  labels:
+    app: mypythonapp
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: mypythonapp
+  template:
+    metadata:
+      labels:
+        app: mypythonapp
+    spec:
+      containers:
+      - name: mypythonreplica
+        image: revathi1224/my-python-image
+        ports:
+        - name: nodejs-port
+          containerPort: 3000
